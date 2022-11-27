@@ -1,0 +1,47 @@
+version: '2.4'
+services:
+  qr_code_1:
+    image: qrcode1_3
+    container_name: qr_code_1
+    build:
+      context: ./qr_code_1
+      dockerfile: ./Dockerfile
+    ports:
+      - 6000:15555
+    restart: always
+  qr_code_2:
+    image: qrcode2_3
+    container_name: qr_code_2
+    build:
+      context: ./qr_code_2
+      dockerfile: ./Dockerfile
+    ports:
+      - 6001:15555
+    restart: always
+  qr_code_3:
+    image: qrcode3_3
+    container_name: qr_code_3
+    build:
+      context: ./qr_code_3
+      dockerfile: ./Dockerfile
+    ports: 
+      - 6002:15555
+    restart: always
+  tic_tac_boom:
+    image: tic_tac_boom
+    container_name: tic_tac_boom
+    build:
+      context: ./tic_tac_boom
+      dockerfile: ./Dockerfile
+    ports:
+      - 6003:10000
+    restart: always
+  repos_merite:
+    image: repos_merite
+    container_name: repos_merite
+    build:
+      context: ./un_repos_bien_merite
+      dockerfile: ./Dockerfile
+    ports:
+      - 6004:10000
+    restart: always

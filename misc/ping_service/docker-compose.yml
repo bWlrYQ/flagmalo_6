@@ -1,0 +1,10 @@
+version: '2.4'
+
+services:
+  ping_service:
+    image: ping_service
+    container_name: ping_service
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: always

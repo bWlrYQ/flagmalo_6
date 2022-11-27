@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Notes - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="static/bootstrap.bundle.min.js"></script>
+    <style>.fm-bg{color: #8c56ac;}</style>
+    {% if redir %}
+        <script>window.onload = function(){setTimeout(() => {location.replace('/notes');}, 3000);}</script>
+    {% endif %}
+  </head>
+  <body class="bg-dark text-light">
+    <div class="container">
+        <a href="/"><img src="static/logo.png" alt="logo" class="mw-50 mx-auto d-block img-fluid mt-2"></a>
+        <h2 class="text-center mt-2">FlagMalo Notes</h2>
+        <hr>
+    </div>
+    <div class="container w-25">
+        {% if error %}
+            <p class="text-center text-danger">{{ error }}</p>
+        {% endif %}
+        <div class="container mt-2">
+            {% if render %}
+                {{ noteToRender|safe }}
+            {% endif %}
+        </div>
+    </div>
+  </body>
+  <footer>
+    <br>
+    <div class="container text-center">
+        <p class="text-secondary text-center">Made with ❤️ by Matthieu & Maxence</p>
+    </div>
+  </footer>
+</html>

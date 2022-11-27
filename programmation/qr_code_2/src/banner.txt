@@ -1,0 +1,13 @@
+	 ______ _               _____     __  __          _      ____  
+	|  ____| |        /\   / ____|   |  \/  |   /\   | |    / __ \ 
+	| |__  | |       /  \ | |  __    | \  / |  /  \  | |   | |  | |
+	|  __| | |      / /\ \| | |_ |   | |\/| | / /\ \ | |   | |  | |
+	| |    | |____ / ____ \ |__| |   | |  | |/ ____ \| |___| |__| |
+	|_|    |______/_/    \_\_____|   |_|  |_/_/    \_\______\____/ 
+                                                             
+                                                             
+Ce challenge consiste à décoder une série de 5 QR codes : vous recevrez en base 64
+un QR code à la fois que vous devez décoder puis renvoyez le message correspondant 
+en moins de 2 secs.
+
+Quand vous êtes prêt, envoyez : start !

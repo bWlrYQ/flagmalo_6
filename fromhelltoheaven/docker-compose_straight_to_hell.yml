@@ -1,0 +1,41 @@
+version: '2.4'
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
+
+services:
+  db:
+    image: mysql
+    networks:
+            vpcbr:
+                ipv4_address: 10.5.0.3
+    container_name: db_straighttohell
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: l4RavYAn2zh0uJq9gCfbOHS4m
+      MYSQL_DATABASE: StraightToHell
+    healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 10
+
+  straighttohell:
+    image: straighttohell
+    networks:
+            vpcbr:
+                ipv4_address: 10.5.0.2
+    container_name: straighttohell
+    build:
+      context: ./straight_to_hell/src/
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 8000:80
+    depends_on:
+      db:
+        condition: service_healthy

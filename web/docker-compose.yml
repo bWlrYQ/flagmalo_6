@@ -1,0 +1,96 @@
+version: '2.4'
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.6.0.0/16
+         gateway: 10.6.0.1
+
+services: 
+  strengthchecker:
+    image: strengthchecker
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.2
+    container_name: strengthchecker
+    build:
+      context: ./strength_checker
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:80
+    restart: always
+    tty: true
+  javascriptobfuscation:
+    image: javascriptobfuscation
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.3
+    container_name: javascriptobfuscation
+    build:
+      context: ./javascript_obfuscation
+      dockerfile: ./Dockerfile
+    ports:
+      - 5001:80
+    restart: always
+  tellmeyoursecret:
+    image: tellmeyoursecret
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.4
+    container_name: tellmeyoursecret
+    build:
+      context: ./tell_me_your_secret
+      dockerfile: ./Dockerfile
+    ports:
+      - 5002:80
+    restart: always
+  tellmeyoursecret2:
+    image: tellmeyoursecret2
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.5
+    container_name: tellmeyoursecret2
+    build:
+      context: ./tell_me_your_secret_2
+      dockerfile: ./Dockerfile
+    ports:
+      - 5003:80
+    restart: always
+  agent:
+    image: agent
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.6
+    container_name: agent
+    build:
+      context: ./un_agent_pas_comme_les_autres
+      dockerfile: ./Dockerfile
+    ports:
+      - 5004:80
+    restart: always
+  jwt:
+    image: jwt
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.7
+    container_name: jwt
+    build:
+      context: ./jwt
+      dockerfile: ./Dockerfile
+    ports:
+      - 5005:80
+    restart: always
+  flagroulette:
+    image: flagroulette
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.8
+    container_name: flagroulette
+    build:
+      context: ./flag_roulette
+      dockerfile: ./Dockerfile
+    ports:
+      - 5006:80
+    restart: always

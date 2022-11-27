@@ -1,0 +1,35 @@
+version: '2.4'
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.6.0.0/16
+         gateway: 10.6.0.1
+
+services: 
+  downtohell:
+    image: downtohell
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.2
+    container_name: downtohell
+    build:
+      context: ./down_to_hell/src/
+      dockerfile: ./Dockerfile
+    ports:
+      - 8001:8001
+    restart: always
+  
+  highwaytoheaven:
+    image: highwaytoheaven
+    container_name: highwaytoheaven
+    build:
+      context: ./highway_to_heaven/src/
+      dockerfile: ./Dockerfile
+    networks:
+            vpcbr:
+                ipv4_address: 10.6.0.3
+    restart: always
+

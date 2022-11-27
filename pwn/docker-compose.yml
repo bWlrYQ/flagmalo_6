@@ -1,0 +1,22 @@
+version: "2.4"
+
+services: 
+  help:
+    image: help
+    container_name: help
+    build:
+      context: ./help
+      dockerfile: ./Dockerfile
+    ports:
+      - "7000:7000"
+    restart: always
+  lowlevel:
+    image: lowlevel
+    container_name: lowlevel
+    build:
+      context: ./lowlevel
+      dockerfile: ./Dockerfile
+    ports: 
+      - "2222:22"
+      - "7001:7000"
+    restart: always
