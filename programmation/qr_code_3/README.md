@@ -1,8 +1,8 @@
-# Quick Response Code 2
+# Quick Response Code 3
 
 **Auteur:** Wa0k  
 **Catégorie:** Programmation  
-**Enoncé:** Vous avez eu de la chance pour le premier niveau ! Cette fois-ci, seuls les vrais experts pourront passer au niveau ultime. Vous avez toujours 2 secondes par QR code dans une série de 5 pour obtenir le flag !
+**Enoncé:** Vous voilà au niveau ultime ! Qu'une seule chose à vous dire : bonne chance !
 
 PS : vous pourrez avoir besoin des bibliothèques suivantes : socket, base64, PIL, io, pyzbar
 **Sources fournies:** aucune  
