@@ -1,7 +1,7 @@
 # Le chiffrement de la victoire
 
-**Auteur:** Wa0k
-**Catégorie:** Cryptographie
+**Auteur:** Wa0k  
+**Catégorie:** Cryptographie  
 **Enoncé:** Cher agent,
 Nous venons de recevoir un message important d'un code talker et nous avons besoin de vos compétences pour le déchiffrer. Sachez que l'inventeur derrière ce mécanisme est Philip Johnston.
 
